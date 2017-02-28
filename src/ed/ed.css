@@ -5,7 +5,7 @@ Intentionally not BEM and not SASS because the thing needs it's own design.
   margin: auto;
 }
 .editor--left-col {
-  height: 100vh;
+  min-height: 100vh;
 }
 
 .editor__components {
