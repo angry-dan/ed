@@ -1,7 +1,7 @@
 import React, {Component, createElement} from "react";
 export default class extends Component {
   render() {
-    const formProps = Object.assign({onChange: this.props.onChange}, this.props.component.state);
+    const formProps = Object.assign({onChange: this.props.onChange}, this.props.componentState);
     return <div className="card white">
       <div className="card-content">
         {createElement(this.props.component.componentForm, formProps)}

@@ -21,12 +21,10 @@ export default function reducer(state = [], action = {}, componentTypes = []) {
       return c;
 
     case DELETE:
-      return Object.assign({}, state, {
-        components: [
-          ...state.slice(0, action.index),
-          ...state.slice(action.index + 1)
-        ]
-      });
+      return [
+        ...state.slice(0, action.index),
+        ...state.slice(action.index + 1)
+      ];
 
     default:
       return state;

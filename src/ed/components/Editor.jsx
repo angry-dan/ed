@@ -5,11 +5,11 @@ import {deleteComponent, updateComponent} from "../modules/components";
 
 const component = ({components, componentTypes, deleteComponent, updateComponent}) => <div>
   <ol className="editor__components">
-    {components.map(({componentState, type}, i) =>
+    {components.map(({type, state}, i) =>
       <li key={i}>
         <ComponentForm
           component={componentTypes[type]}
-          componentState={componentState}
+          componentState={state}
           onDelete={() => deleteComponent(i)}
           onChange={state => updateComponent(i, state)} />
       </li>

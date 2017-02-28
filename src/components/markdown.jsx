@@ -10,5 +10,5 @@ export default {
   'description': 'A markdown field',
   'component': ComponentMarkdown,
   'componentForm': ComponentMarkdownForm,
-  'defaultState': {body: ''}
+  'defaultState': {body: 'We can write in **Bold**, *italic*.'}
 };
