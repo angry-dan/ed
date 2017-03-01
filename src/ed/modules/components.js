@@ -1,8 +1,10 @@
 const ADD = 'ed/components/ADD';
 const UPDATE = 'ed/components/UPDATE';
 const DELETE = 'ed/components/DELETE';
+const REORDER = 'ed/components/REORDER';
 
 export default function reducer(state = [], action = {}, componentTypes = []) {
+  const c = [...state];
   switch (action.type) {
     case ADD:
       return [
@@ -14,7 +16,6 @@ export default function reducer(state = [], action = {}, componentTypes = []) {
       ];
 
     case UPDATE:
-      const c = [...state];
       c[action.index] = Object.assign({}, c[action.index], {
         state: Object.assign({}, c[action.index].state, action.state)
       });
@@ -25,6 +26,11 @@ export default function reducer(state = [], action = {}, componentTypes = []) {
         ...state.slice(0, action.index),
         ...state.slice(action.index + 1)
       ];
+
+    case REORDER:
+      const moving = c.splice(action.fromIndex, 1)[0];
+      c.splice(action.toIndex, 0, moving);
+      return c;
 
     default:
       return state;
@@ -42,4 +48,8 @@ export function updateComponent(index, state) {
 
 export function deleteComponent(index) {
   return {type: DELETE, index};
+}
+
+export function reorderComponents(fromIndex, toIndex) {
+  return {type: REORDER, fromIndex, toIndex}
 }
