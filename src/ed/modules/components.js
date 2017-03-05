@@ -3,7 +3,7 @@ export const UPDATE = 'ed/components/UPDATE';
 export const DELETE = 'ed/components/DELETE';
 export const REORDER = 'ed/components/REORDER';
 
-export default function reducer(state = [], action = {}, componentTypes = []) {
+export default function reducer(state = [], action = {}, componentTypes = {}) {
   const c = [...state];
   switch (action.type) {
     case ADD:
