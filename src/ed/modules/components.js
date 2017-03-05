@@ -1,7 +1,7 @@
-const ADD = 'ed/components/ADD';
-const UPDATE = 'ed/components/UPDATE';
-const DELETE = 'ed/components/DELETE';
-const REORDER = 'ed/components/REORDER';
+export const ADD = 'ed/components/ADD';
+export const UPDATE = 'ed/components/UPDATE';
+export const DELETE = 'ed/components/DELETE';
+export const REORDER = 'ed/components/REORDER';
 
 export default function reducer(state = [], action = {}, componentTypes = []) {
   const c = [...state];
@@ -10,6 +10,7 @@ export default function reducer(state = [], action = {}, componentTypes = []) {
       return [
         ...state,
         {
+          id: state.length,
           type: action.componentType,
           state: componentTypes[action.componentType].defaultState
         }
