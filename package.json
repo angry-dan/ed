@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "webpack",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest"
   },
   "author": "Dan James",
   "license": "ISC",
@@ -24,6 +24,7 @@
     "react-dnd": "^2.2.3",
     "react-dnd-html5-backend": "^2.2.3",
     "react-dom": "^15.4.2",
+    "react-frame-component": "^1.0.1",
     "react-redux": "^5.0.3",
     "redux": "^3.6.0",
     "scss-loader": "0.0.1",
@@ -31,5 +32,9 @@
     "url-loader": "^0.5.8",
     "webpack": "^2.2.1",
     "webpack-dev-server": "^2.4.1"
+  },
+  "devDependencies": {
+    "babel-jest": "^19.0.0",
+    "jest": "^19.0.2"
   }
 }
