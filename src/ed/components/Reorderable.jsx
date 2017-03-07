@@ -46,10 +46,8 @@ export default (reorderFunction) => WrappedComponent => {
         return;
       }
 
-      console.log('dispatch a reorder');
-
       // Time to actually perform the action
-      props.onReorder(dragIndex, hoverIndex);
+      props.onReorder(dragIndex, hoverIndex, 0);
 
       // Note: we're mutating the monitor item here!
       // Generally it's better to avoid mutations,

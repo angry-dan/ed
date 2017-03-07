@@ -2,20 +2,23 @@ import React from "react";
 import ComponentForm from "./ComponentForm";
 import {connect} from "react-redux";
 import {deleteComponent, updateComponent, reorderComponents} from "../modules/components";
+import {get, find} from "lodash";
 
-const component = ({components, componentTypes, deleteComponent, updateComponent, reorderComponents}) => <div>
+const component = ({components, componentTypes, deleteComponent, updateComponent, reorderComponents, id = 0}) => <div>
   <ol className="editor__components">
-    {components.map(({type, state}, i) =>
-      <li key={i}>
+    {find(components, {id}).children.map((id, i) => {
+      const {type, state} = find(components, {id});
+      return <li key={id}>
         <ComponentForm
           component={componentTypes[type]}
           componentState={state}
-          onDelete={() => deleteComponent(i)}
-          onChange={state => updateComponent(i, state)}
+          onDelete={() => deleteComponent(id)}
+          onChange={state => updateComponent(id, state)}
           index={i}
           onReorder={reorderComponents}
-        />
-      </li>
+          />
+        </li>;
+      }
     )}
   </ol>
 </div>;
