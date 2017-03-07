@@ -129,6 +129,7 @@ test('deleting a component', () => {
 });
 
 test('rearranging components', () => {
+  // TODO there's some stuff about changing the parent.
   const action = components.reorderComponents(0, 1);
 
   expect(action).toEqual({type: components.REORDER, fromIndex: 0, toIndex: 1, id: 0});
@@ -155,10 +156,12 @@ test('rearranging components', () => {
       children: [],
       state: {someValue: true},
     },
-  ])
+  ]);
 });
 
 test('components with children', () => {
+  // TODO Introduce support for lists and named children ([] vs {}).
+
   expect(reducer(componentTree, components.addComponent('slice', 1), componentTypes)).toEqual([
     {
       id: 0,
@@ -184,3 +187,6 @@ test('components with children', () => {
 test('immutable state', () => {
   expect(componentTree).toEqual(componentTreeCopy);
 });
+
+
+// TODO Something about not confusing indexes and IDs
