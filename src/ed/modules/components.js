@@ -4,7 +4,12 @@ export const UPDATE = 'ed/components/UPDATE';
 export const DELETE = 'ed/components/DELETE';
 export const REORDER = 'ed/components/REORDER';
 
-export default function reducer(state = [], action = {}, componentTypes = {}) {
+const inital = [{
+  id: 0,
+  children: []
+}];
+
+export default function reducer(state = inital, action = {}, componentTypes = {}) {
   const c = [...state];
   const index = findIndex(c, {id: action.id});
 
@@ -41,7 +46,7 @@ export default function reducer(state = [], action = {}, componentTypes = {}) {
 
     case DELETE:
 
-      const removeRefs = c.map(item => item.children.indexOf(index) !== -1 ? Object.assign({}, item, {children: without(item.children, index)}) : item);
+      const removeRefs = c.map(item => item.children.indexOf(action.id) !== -1 ? Object.assign({}, item, {children: without(item.children, action.id)}) : item);
       return [
         ...removeRefs.slice(0, index),
         ...removeRefs.slice(index + 1)
@@ -74,6 +79,9 @@ export function updateComponent(id, state) {
 }
 
 export function deleteComponent(id) {
+  if (id == 0) {
+    throw new Error('Cannot delete the root element with ID 0');
+  }
   return {type: DELETE, id};
 }
 

@@ -91,6 +91,7 @@ test('deleting a component', () => {
   let state = componentTree;
 
   state = reducer(state, action, componentTypes);
+
   expect(state).toEqual([
       {
         id: 0,
@@ -104,6 +105,12 @@ test('deleting a component', () => {
   state = reducer(state, components.addComponent('slice'), componentTypes);
   state = reducer(state, components.addComponent('slice'), componentTypes);
   state = reducer(state, components.deleteComponent(2), componentTypes);
+
+  state = reducer(state, components.addComponent('slice'), componentTypes);
+  // This second delete proves that items with an index different to their ID
+  // are handled correctly.
+  state = reducer(state, components.deleteComponent(4), componentTypes);
+
   expect(state)
     .toEqual([
       {
