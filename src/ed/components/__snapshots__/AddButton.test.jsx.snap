@@ -1,0 +1,30 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<div>
+  <a
+    className="btn-floating red btn-large"
+  >
+    <i
+      className="large material-icons"
+    >
+      add
+    </i>
+  </a>
+  <ul>
+    <li>
+      <button
+        className="btn-floating red"
+        onClick={[Function]}
+        title="Add A test component"
+      >
+        <i
+          className="material-icons"
+        >
+          format_quote
+        </i>
+      </button>
+    </li>
+  </ul>
+</div>
+`;

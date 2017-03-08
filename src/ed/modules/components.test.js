@@ -111,6 +111,9 @@ test('deleting a component', () => {
   // are handled correctly.
   state = reducer(state, components.deleteComponent(4), componentTypes);
 
+  // TODO Deleting a component with children doesn't recurse onto deleting
+  // children.
+
   expect(state)
     .toEqual([
       {

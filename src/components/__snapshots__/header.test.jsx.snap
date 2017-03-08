@@ -1,0 +1,37 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`component form renders correctly 1`] = `
+<div
+  className="scale-transition scale-in"
+>
+  <input
+    name="title"
+    onChange={[Function]}
+    type="text"
+    value="Some title"
+  />
+  <input
+    name="body"
+    onChange={[Function]}
+    type="text"
+    value="Some other body"
+  />
+</div>
+`;
+
+exports[`component renders correctly 1`] = `
+<header
+  className="header"
+>
+  <h1
+    className="header__title"
+  >
+    Some title
+  </h1>
+  <p
+    className="header__body"
+  >
+    Some other body
+  </p>
+</header>
+`;

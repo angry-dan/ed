@@ -1,0 +1,30 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`component form renders correctly 1`] = `
+<textarea
+  className="materialize-textarea"
+  onChange={[Function]}
+  placeholder="Enter text here in *markdown* _format_"
+  value="Some markdown
+**which includes bold** _italic_ and 
+- a list
+- of things"
+/>
+`;
+
+exports[`component renders correctly 1`] = `
+<div
+  className="markdown flow-text"
+  dangerouslySetInnerHTML={
+    Object {
+      "__html": "<p>Some markdown
+    <strong>which includes bold</strong> <em>italic</em> and </p>
+    <ul>
+    <li>a list</li>
+    <li>of things</li>
+    </ul>
+    ",
+    }
+  }
+/>
+`;
