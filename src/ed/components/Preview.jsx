@@ -16,6 +16,8 @@ const component = ({components, componentTypes}) => <Frame style={{border: "none
       component = componentTypes[type].component;
 
     return <div className="hoverable" key={i}>
+      {/*TODO make sure that children get rendered too (pass a hash of rendering things, it's the job of the component to actually render them but we give the components that do it.).*/}
+      {/*TODO Watch out for recursion.*/}
       {React.createElement(component, state, children)}
     </div>
   })}

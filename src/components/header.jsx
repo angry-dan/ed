@@ -1,8 +1,8 @@
 import React from "react";
-const ComponentHeader = ({title, body}) =>
+export const ComponentHeader = ({title, body}) =>
   <header className="header"><h1 className="header__title">{title}</h1><p className="header__body">{body}</p></header>;
 
-class ComponentHeaderForm extends React.Component {
+export class ComponentHeaderForm extends React.Component {
   handleChange(t) {
     return (event) => {
       this.props.onChange({[t]: event.target.value});
