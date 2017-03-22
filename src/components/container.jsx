@@ -37,6 +37,5 @@ export default {
 };
 
 
-// TODO Make a form that some how takes advantage of children it get's provided.
 // TODO make a component that renders children.
 // Each child that get's rendered should not be in it's own iFrame even though that does actually work.
